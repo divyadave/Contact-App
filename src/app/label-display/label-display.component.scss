@@ -1,0 +1,23 @@
+ul {
+  list-style: none;
+  cursor: pointer;
+  li {
+    span {
+      padding-right: 1em;
+      padding-bottom: 1em;
+    }
+  }
+
+  .uk-list:after {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1em;
+    width: 1em;
+    height: 1em;
+    margin-right: 1em;
+    text-align: center;
+    content: "✔";
+    color: #999;
+    margin-left: 1em;
+  }
+}

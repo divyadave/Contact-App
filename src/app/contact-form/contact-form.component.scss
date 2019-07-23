@@ -1,0 +1,171 @@
+$inputWidth: 190px;
+$inputHeight: 30px;
+$outline: 0;
+$borderWidth: 0 0 1px;
+$padding: 1em;
+$transition: all 0.3s ease-in-out;
+$inputBoxShadow: 0 5px 5px -5px rgba(81, 203, 238, 1);
+
+form {
+  #name {
+    span {
+      padding-right: 0.3em;
+      margin-top: 1em;
+      display: inline-block;
+    }
+    input#firstname {
+      width: $inputWidth;
+      height: $inputHeight;
+      outline: $outline;
+      border-width: $borderWidth;
+      -webkit-transition: $transition;
+      -moz-transition: $transition;
+      -ms-transition: $transition;
+      -o-transition: $transition;
+      text-align: left;
+    }
+    input[type="text"]:focus {
+      box-shadow: $inputBoxShadow;
+    }
+    input#lastname {
+      width: 210px;
+      height: $inputHeight;
+      outline: $outline;
+      border-width: $borderWidth;
+      margin-left: 1em;
+      -webkit-transition: $transition;
+      -moz-transition: $transition;
+      -ms-transition: $transition;
+      -o-transition: $transition;
+    }
+    input[type="text"]:focus {
+      box-shadow: $inputBoxShadow;
+    }
+  }
+  #company {
+    padding-top: 1em;
+    span {
+      padding-right: 0.3em;
+      margin-top: 1em;
+    }
+    input#companyname {
+      width: $inputWidth;
+      height: $inputHeight;
+      outline: $outline;
+      border-width: $borderWidth;
+      padding: $padding;
+      -webkit-transition: $transition;
+      -moz-transition: $transition;
+      -ms-transition: $transition;
+      -o-transition: $transition;
+    }
+
+    input#jobtitle {
+      width: $inputWidth;
+      height: $inputHeight;
+      outline: $outline;
+      border-width: $borderWidth;
+      padding: $padding;
+      margin-left: 1em;
+      -webkit-transition: $transition;
+      -moz-transition: $transition;
+      -ms-transition: $transition;
+      -o-transition: $transition;
+    }
+    input[type="text"]:focus {
+      box-shadow: $inputBoxShadow;
+    }
+  }
+  #email {
+    padding-top: 1em;
+    span {
+      padding-right: 0.3em;
+      margin-top: 1em;
+    }
+    input#emailid {
+      width: 450px;
+      height: 30px;
+      outline: 0;
+      border-width: $borderWidth;
+      padding: 1em;
+      -webkit-transition: $transition;
+      -moz-transition: $transition;
+      -ms-transition: $transition;
+      -o-transition: $transition;
+    }
+    input[type="text"]:focus {
+      box-shadow: $inputBoxShadow;
+    }
+  }
+  #checkboxname {
+    margin-top: 1em;
+    margin-left: 1.5em;
+  }
+  #checkbox {
+    margin-left: 1.5em;
+    margin-top: 1.2em;
+  }
+  #phonenum {
+    padding-top: 1em;
+    span {
+      padding-right: 0.3em;
+      margin-top: 1em;
+    }
+    input#phone {
+      width: 200px;
+      height: 30px;
+      outline: 0;
+      border-width: $borderWidth;
+      padding: 1em;
+      -webkit-transition: $transition;
+      -moz-transition: $transition;
+      -ms-transition: $transition;
+      -o-transition: $transition;
+    }
+    input[type="text"]:focus {
+      box-shadow: $inputBoxShadow;
+    }
+  }
+  #notes {
+    padding-top: 1em;
+    span {
+      padding-right: 0.3em;
+      margin-top: 1em;
+    }
+    input#notes {
+      width: 400px;
+      height: 30px;
+      outline: 0;
+      border-width: $borderWidth;
+      padding: 1em;
+      -webkit-transition: $transition;
+      -moz-transition: $transition;
+      -ms-transition: $transition;
+      -o-transition: $transition;
+    }
+    input[type="text"]:focus {
+      box-shadow: $inputBoxShadow;
+    }
+  }
+  button#save {
+    float: right;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  button#clear {
+    float: right;
+    margin-top: 1em;
+  }
+  button#fields {
+    float: left;
+    margin-top: 1em;
+  }
+}
+/* .ng-valid[required],
+.ng-valid.required {
+  border-bottom: 5px solid #42a948;
+}
+.ng-invalid:not(form) {
+  border-bottom: 5px solid red;
+} */

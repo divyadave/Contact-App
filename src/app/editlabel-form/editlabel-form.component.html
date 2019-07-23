@@ -1,0 +1,13 @@
+<div id="editlabelformmodal" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <h4>Edit Label</h4>
+    <form [formGroup]="labelForm">
+      <div id="labelName">
+        <input class="uk-input" type="input" formControlName="labelName" required />
+      </div>
+      <button class="uk-button uk-button-default uk-button-small" (click)="cancelLabel()">Cancel</button>
+      <button class="uk-button uk-button-default uk-button-small" (click)="saveLabel()"
+        [disabled]="labelForm.pristine || labelForm.invalid">Save</button>
+    </form>
+  </div>
+</div>

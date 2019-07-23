@@ -1,0 +1,73 @@
+<div class="ca-search">
+  <div class="uk-search uk-search-default">
+    <input class="uk-search-input" [(ngModel)]="searchText" type="search" placeholder="Search...">
+
+  </div>
+  <table class="uk-table">
+    <thead>
+      <tr>
+        <th width="15%">Name</th>
+        <th width="15%">Email</th>
+        <th width="15%" colspan="2">Phone</th>
+        <th width="15%">Company & Job Title</th>
+        <th width="15%">Labels</th>
+        <th colspan="3" width="15%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts | filter: searchText">
+        <td uk-toggle="target: #contactdetail" (click)="details(contact)">{{ contact.firstName }}
+          {{ contact.lastName }}
+        </td>
+        <td uk-toggle="target: #contactdetail" (click)="details(contact)">{{ contact.email }}</td>
+        <td colspan="2">
+          <ul class="uk-list">
+            <li *ngFor="let phoneNr of contact.phoneNum">{{phoneNr.phone}}</li>
+          </ul>
+        </td>
+        <td uk-toggle="target: #contactdetail" (click)="details(contact)">{{ contact.companyName }}
+          {{ contact.jobTitle }}
+        </td>
+        <!--  <td *ngFor="let label of contact.labels">{{ label }}</td> -->
+        <td colspan="2">
+          <ul class="uk-list">
+            <li *ngFor="let label of contact.labels">{{ label }}</li>
+          </ul>
+        </td>
+        <td><button uk-toggle="target: #formmodal" (click)="edit(contact)"><span uk-icon="pencil"></span></button></td>
+        <td><span uk-icon="trash" (click)="delete(contact.id)"></span></td>
+        <td><button class="uk-button uk-button-default" type="button"
+            (click)="selectedDetails(contact.id, contact.firstName, contact.labels)">
+            <span uk-icon="more-vertical"></span></button>
+          <div uk-dropdown="mode: click">
+            <app-label-display [selectedContact]="contactDetails" (passData)="displayLabelName($event)">
+            </app-label-display>
+          </div>
+        </td>
+
+
+        <!-- uk-toggle="target: #labeldisplay" -->
+      </tr>
+    </tbody>
+    <p>Contacts: {{ contacts.length }}</p>
+  </table>
+  <div id="formmodal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <app-contact-form [editData]="selectedContact"></app-contact-form>
+    </div>
+  </div>
+
+  <div id="contactdetail" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-margin-auto-vertical">
+      <div class="uk-modal-header">
+        <app-contact-detail [detail]="selectedDetail"></app-contact-detail>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="labeldisplay" class="uk-flex-top" uk-modal>
+  <div class="uk-modal-dialog uk-margin-auto-vertical">
+    <div class="uk-modal-header"> -->
+  <!-- </div>
+  </div>
+
+</div> -->

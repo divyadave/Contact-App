@@ -1,0 +1,29 @@
+<aside class="sidenav" id="sidenav">
+  <div class="contact">
+    <button uk-toggle="target: #formmodal" class="uk-button uk-button-default uk-button-large">Create Contact</button>
+  </div>
+  <ul class="uk-list">
+    <li><span uk-icon="user"></span><a>Contacts</a><span style="color: blue;">{{ contacts.length }}</span></li>
+    <li><span uk-icon="future"></span><a>Frequently Contacted</a></li>
+    <li><span uk-icon="copy"></span><a>Duplicates</a></li>
+    <hr>
+    <li><span uk-icon="chevron-up"></span><a>Labels</a></li>
+    <div *ngFor="let label of labels ">
+      <li><span uk-icon="arrow-right"></span>
+        <p>{{ label.labelName }}<button uk-toggle="target: #editlabelformmodal" class="uk-button"
+            (click)="edit(label)"><span uk-icon="pencil"></span></button><span uk-icon="trash"
+            (click)="deleteLabel(label.id)"></span></p>
+      </li>
+    </div>
+    <li><button uk-toggle="target: #labelformmodal" class="uk-button uk-button-default"><span
+          uk-icon="plus"></span><a>Create Label</a></button></li>
+    <hr>
+    <li><span uk-icon="chevron-down"></span><a>More</a></li>
+    <hr>
+    <li><span uk-icon="pull"></span><a>Other Contacts</a></li>
+    <li><span uk-icon="settings"></span><a>Settings</a></li>
+    <li><span uk-icon="comments"></span><a> Send Feedback</a></li>
+    <li><span uk-icon="question"></span><a>Help</a></li>
+  </ul>
+</aside>
+<app-editlabel-form [editData]="selectedLabel"></app-editlabel-form>

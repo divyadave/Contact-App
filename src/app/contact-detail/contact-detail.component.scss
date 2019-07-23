@@ -1,0 +1,13 @@
+.details {
+  display: flex;
+  .menu {
+    align-items: right;
+  }
+  button {
+    background: transparent;
+    border: transparent;
+  }
+}
+span {
+  margin-right: 2em;
+}

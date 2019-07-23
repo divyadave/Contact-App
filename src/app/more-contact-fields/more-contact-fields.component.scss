@@ -1,0 +1,112 @@
+$inputWidth: 450px;
+$inputHeight: 30px;
+$border: none;
+$borderBottom: 1px solid #3f3fa0;
+$margin: 1em 0 1em 2.6em;
+
+form {
+  span {
+    margin-top: 1em;
+    padding-left: 2em;
+    position: absolute;
+    left: 0;
+  }
+  #prefix {
+    input#prefix {
+      width: $inputWidth;
+      height: $inputHeight;
+      border: $border;
+      margin: $margin;
+      border-bottom: $borderBottom;
+    }
+  }
+  #firstName {
+    input#firstName {
+      width: $inputWidth;
+      height: $inputHeight;
+      border: $border;
+      margin-left: 2.5em;
+      border-bottom: $borderBottom;
+    }
+  }
+  #middleName {
+    input#middleName {
+      width: $inputWidth;
+      height: $inputHeight;
+      border: $border;
+      margin-left: 2.5em;
+      margin-top: 1em;
+      border-bottom: $borderBottom;
+    }
+  }
+  #lastName {
+    input#lastName {
+      width: $inputWidth;
+      height: $inputHeight;
+      border: $border;
+      margin-left: 2.5em;
+      margin-top: 1em;
+      border-bottom: $borderBottom;
+    }
+  }
+  #suffix {
+    input#suffix {
+      width: $inputWidth;
+      height: $inputHeight;
+      border: $border;
+      margin-left: 2.5em;
+      margin-top: 1em;
+      border-bottom: $borderBottom;
+    }
+  }
+  #phoneticFirst {
+    input#phoneticFirst {
+      width: $inputWidth;
+      height: $inputHeight;
+      border: $border;
+      margin-left: 2.5em;
+      margin-top: 1em;
+      border-bottom: $borderBottom;
+    }
+  }
+  #phoneticMiddle {
+    input#phoneticMiddle {
+      width: $inputWidth;
+      height: $inputHeight;
+      border: $border;
+      margin-left: 2.5em;
+      margin-top: 1em;
+      border-bottom: $borderBottom;
+    }
+  }
+  #phoneticLast {
+    input#phoneticLast {
+      width: $inputWidth;
+      height: $inputHeight;
+      border: $border;
+      margin-left: 2.5em;
+      margin-top: 1em;
+      border-bottom: $borderBottom;
+    }
+  }
+  #nickName {
+    input#nickName {
+      width: $inputWidth;
+      height: $inputHeight;
+      border: $border;
+      margin-left: 2.5em;
+      margin-top: 1em;
+      border-bottom: $borderBottom;
+    }
+  }
+  #fileAs {
+    input#fileAs {
+      width: $inputWidth;
+      height: $inputHeight;
+      border: $border;
+      margin-left: 2.5em;
+      margin-top: 1em;
+      border-bottom: $borderBottom;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+<h4>Create New Contact</h4>
+<form [formGroup]='contactForm'>
+  <div *ngIf="show">
+    <div id="name">
+      <span uk-icon="user"></span>
+      <input class="uk-input" type="text" formControlName="firstName" id="firstname" placeholder="First Name"
+        required />
+      <input class="uk-input" type="text" formControlName="lastName" id="lastname" placeholder="Last Name"
+        required /><span uk-icon="close" (click)="clearNameControl()"></span>
+      <div
+        *ngIf="contactForm.controls['firstName'].invalid && (contactForm.controls['firstName'].dirty || contactForm.controls['firstName'].touched)"
+        class="uk-text-danger" style="margin-top: 1em; margin-left: 1.5em;">First Name is required</div>
+    </div>
+    <div id="company">
+      <span uk-icon="home"></span>
+      <input class="uk-input" type="text" formControlName="companyName" id="companyname"
+        placeholder="Company Name" /><span uk-icon="close" (click)="clearCompanyControl()"></span>
+      <input class="uk-input" type="text" formControlName="jobTitle" id="jobtitle" placeholder="Job Title" /><span
+        uk-icon="close" (click)="clearJobTitleControl()"></span>
+      <div
+        *ngIf="contactForm.controls['companyName'].invalid && (contactForm.controls['companyName'].dirty || contactForm.controls['companyName'].touched)"
+        class="uk-text-danger" style="margin-top: 1em; margin-left: 1.5em;">Company Name is required</div>
+    </div>
+    <div id="email">
+      <span uk-icon="mail"></span>
+      <input class="uk-input" type="text" formControlName="email" id="emailid" placeholder="Email" /><span
+        uk-icon="close" (click)="clearEmailIdControl()"></span>
+      <div
+        *ngIf="contactForm.controls['email'].invalid && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)"
+        class="uk-text-danger" style="margin-top: 1em; margin-left: 1.5em;">Email Address is required</div>
+      <div *ngIf="contactForm.get('email').errors?.email" class="uk-test-danger"
+        style="margin-top: 1em; margin-left: 1.5em;">The Email is not valid</div>
+    </div>
+    <div id="checkboxname">
+      <label>Please Select The Label</label>
+    </div>
+    <div id="checkbox" formArrayName="labels">
+      <div *ngFor="let label of labels">
+        <input class="uk-checkbox" type="checkbox" (change)="onChange(label.labelName, $event.target.checked)" />
+        {{ label.labelName}}
+      </div>
+    </div>
+    <div id="phonenum" formArrayName="phoneNum">
+      <div *ngFor="let num of phoneNum.controls; let phoneIndex = index" [formGroupName]="phoneIndex">
+        <span uk-icon="receiver"></span><input class="uk-input" type="text" formControlName="phone" id="phone"
+          placeholder="Phone" /><span uk-icon="plus-circle" (click)="addPhoneControls()"></span><span uk-icon="close"
+          (click)="removePhoneControls(phoneIndex)"></span>
+        <span
+          *ngIf="(phoneNum.dirty || phoneNum.touched) && phoneNum.invalid && phoneNum.controls[phoneIndex].controls.phone.errors?.invalidNumber"
+          class="uk-alert-danger">{{ phoneNum.controls[phoneIndex].controls.phone.errors?.invalidNumber.error }}</span>
+      </div>
+    </div>
+    <div id="notes">
+      <span uk-icon="pencil"></span>
+      <input class="uk-textarea" formControlName="notes" id="notes" placeholder="Notes" /><span uk-icon="close"
+        (click)="clearNotesControl()"></span>
+    </div>
+  </div>
+  <div>
+    <button class="uk-button-default uk-button-small" id="fields" (click)="toggleField()" [hidden]="!show">More
+      Fields</button>
+    <div>
+      <app-more-contact-fields [showField]="showForm"></app-more-contact-fields>
+    </div>
+    <button class="uk-button-default uk-button-small" id="fields" (click)="toggleLess()" [hidden]="show">Less
+      Fields</button>
+    <div>
+      <button class="uk-button-default uk-button-small" id="save" (click)="onSubmit()" type="submit"
+        [disabled]="contactForm.pristine">Save</button>
+      <button class="uk-button-default uk-button-small" id="clear" (click)="reset()">Clear</button>
+    </div>
+  </div>
+</form>

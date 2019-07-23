@@ -1,0 +1,11 @@
+<!-- <p>Change Labels</p>
+{{ selectedContact | json }} -->
+<ul>
+  <li><span uk-icon="print"></span> Print</li>
+  <li><span uk-icon="cloud-download"></span> Export</li>
+  <hr>
+  <p>Change Labels</p>
+  <li class="uk-list" *ngFor="let label of labels" (click)="displayLabel(label.labelName)"
+    [ngClass]="{'uk-list': isActive}"><span uk-icon="chevron-right"></span> {{ label.labelName }}
+  </li>
+</ul>

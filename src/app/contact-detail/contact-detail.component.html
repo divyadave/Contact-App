@@ -1,0 +1,19 @@
+<div class="details">
+    <div><span uk-icon="user"></span>{{ detail?.firstName }}{{ detail?.lastName}}</div>
+    <div class="menu">
+        <button uk-toggle="target: #formmodal" (click)="edit(contact)"><span uk-icon="pencil"></span></button>
+        <button class="uk-button uk-button-default" type="button"
+            (click)="selectedDetails(contact.id, contact.firstName, contact.labels)">
+            <span uk-icon="more-vertical"></span></button>
+        <div uk-dropdown="mode: click">
+            <app-label-display>
+            </app-label-display>
+        </div>
+    </div>
+</div>
+<hr>
+<h5>Contact Details</h5>
+<div><span uk-icon="mail"></span>{{ detail?.email}}</div>
+<div><span uk-icon="home"></span>{{ detail?.companyName}}</div>
+
+<!-- <div *ngFor="let details of detail[0].phoneNum"><span uk-icon="receiver"></span>{{ details.phone }}</div> -->

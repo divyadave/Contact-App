@@ -1,0 +1,21 @@
+.uk-table {
+  caption {
+    font-size: 1.6rem;
+    margin-left: 0.2em;
+    color: black;
+    margin-bottom: 0.7em;
+  }
+  tr {
+    th {
+      color: black;
+    }
+  }
+  tbody {
+    td {
+      button {
+        background: transparent;
+        border: transparent;
+      }
+    }
+  }
+}

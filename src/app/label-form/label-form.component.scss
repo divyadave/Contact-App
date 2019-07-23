@@ -1,0 +1,34 @@
+$inputWidth: 550px;
+$inputHeight: 30px;
+$outline: none;
+$transition: all 0.3s ease-in-out;
+/* $inputBoxShadow: 0 7px 7px -5px rgb(32, 6, 179); */
+$borderColor: rgb(32, 6, 179);
+
+h4 {
+  font-size: 1rem;
+}
+form {
+  .uk-input {
+    width: $inputWidth;
+    height: $inputHeight;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+    text-align: left;
+    outline: $outline;
+    border: none;
+    border-bottom: 2px solid grey;
+  }
+
+  .uk-input:focus {
+    /*   box-shadow: $inputBoxShadow; */
+    border-color: $borderColor;
+  }
+  button {
+    border: transparent;
+    float: right;
+    margin-top: 2em;
+  }
+}

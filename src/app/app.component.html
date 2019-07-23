@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-header [sidenav]="sidebar-open"></app-header>
+<div id="mainpage">
+  <app-sidebar></app-sidebar>
+  <main id="main">
+    <section>
+      <app-contact-list></app-contact-list>
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>
